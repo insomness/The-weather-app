@@ -4,9 +4,8 @@ const fetch = require("node-fetch");
 require("dotenv").config();
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Server start listening");
-});
+const port = process.env.PORT;
+app.listen(port, () => console.log(`Starting server at: ${port}`));
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.static("public"));
